@@ -1,0 +1,32 @@
+ ------ ------------------------------------------ 
+  Line   src/Dice/DiceDemonstration.php            
+ ------ ------------------------------------------ 
+  58     Variable $diceHand might not be defined.  
+  62     Variable $diceHand might not be defined.  
+  68     Variable $diceHand might not be defined.  
+  69     Variable $diceHand might not be defined.  
+ ------ ------------------------------------------ 
+
+ ------ ------------------------------------------ 
+  Line   src/Dice/Game21.php                       
+ ------ ------------------------------------------ 
+  73     Variable $diceHand might not be defined.  
+  77     Variable $diceHand might not be defined.  
+  80     Variable $diceHand might not be defined.  
+  100    Variable $diceHand might not be defined.  
+  101    Variable $diceHand might not be defined.  
+  102    Variable $diceHand might not be defined.  
+ ------ ------------------------------------------ 
+
+ ------ ------------------------------------------ 
+  Line   src/Dice/Game21computer.php               
+ ------ ------------------------------------------ 
+  46     Variable $diceHand might not be defined.  
+  48     Variable $diceHand might not be defined.  
+  49     Variable $diceHand might not be defined.  
+  50     Variable $diceHand might not be defined.  
+  72     Variable $diceHand might not be defined.  
+ ------ ------------------------------------------ 
+
+ [ERROR] Found 15 errors                                                        
+
