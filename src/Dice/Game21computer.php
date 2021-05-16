@@ -43,8 +43,6 @@ class Game21computer
             $diceHand = new DiceHand(1);
         }
 
-        $diceHand->roll(6);
-
         for ($_SESSION["computerTotalScore"] = 0; $_SESSION["computerTotalScore"] < 21; $_SESSION["computerTotalScore"] += $diceHand->getLastRollSum()) {
             $diceHand->roll(6);
             $_SESSION["computerTotalScore"] += $diceHand->getLastRollSum();
@@ -52,6 +50,8 @@ class Game21computer
             if ($_SESSION["computerTotalScore"] == $_SESSION["totalScore"]) {
                 break;
             } else if ($_SESSION["computerTotalScore"] > $_SESSION["totalScore"] && $_SESSION["computerTotalScore"] < 21) {
+                break;
+            } else if ($_SESSION["computerTotalScore"] > 21) {
                 break;
             }
         }
