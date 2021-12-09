@@ -14,6 +14,7 @@ $action = $action ?? null;
 $numberOfDice = $numberOfDice ?? null;
 $totalScore = $totalScore ?? null;
 $computerTotalScore = $computerTotalScore ?? null;
+$scoreMessage = $scoreMessage ?? null;
 $url = url("/game21/destroy");
 
 

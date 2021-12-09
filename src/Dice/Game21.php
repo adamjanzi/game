@@ -23,17 +23,18 @@ class Game21
 
     public function playGame21(): void
     {
-        $data = [
-            "header" => "Game 21",
-            "message" => "Welcome to Game 21!",
-            "action" => url("/game21/process"),
-            "numberOfFaces" => $_SESSION["numberOfFaces"] ?? null,
-            "numberOfDice" => $_SESSION["numberOfDice"] ?? null,
-            "totalScore" => $_SESSION["totalScore"] ?? 0
-        ];
+        //$data = [
+        //    "header" => "Game 21",
+        //    "message" => "Welcome to Game 21!",
+        //    "action" => url("/game21/process"),
+        //    "numberOfFaces" => $_SESSION["numberOfFaces"] ?? null,
+        //    "numberOfDice" => $_SESSION["numberOfDice"] ?? null,
+        //    "totalScore" => $_SESSION["totalScore"] ?? 0
+        //];
 
         $graphicalDiceSides = 6;
         $scoreMessage = "";
+        $diceHand = "";
 
         $die = new Dice();
         $graphicalDie = new GraphicalDice();
@@ -94,15 +95,15 @@ class Game21
             $_SESSION["computerTotalScore"] = 0;
         }
 
-        $data["dieLastRoll"] = $die->getLastRoll();
-        $data["graphicalDieLastRoll"] = $graphicalDie->getLastRoll();
-        $data["class"] = $graphicalDie->graphic();
-        $data["diceHandRoll"] = $diceHand->getLastRoll();
-        $data["diceHandClass"] = $diceHand->getLastClass();
-        $data["diceHandRollSum"] = $diceHand->getLastRollSum();
-        $data["scoreMessage"] = $scoreMessage;
+        $_SESSION["dieLastRoll"] = $die->getLastRoll();
+        $_SESSION["graphicalDieLastRoll"] = $graphicalDie->getLastRoll();
+        $_SESSION["class"] = $graphicalDie->graphic();
+        $_SESSION["diceHandRoll"] = $diceHand->getLastRoll();
+        $_SESSION["diceHandClass"] = $diceHand->getLastClass();
+        $_SESSION["diceHandRollSum"] = $diceHand->getLastRollSum();
+        $_SESSION["scoreMessage"] = $scoreMessage;
 
-        $body = renderView("layout/game21.php", $data);
-        sendResponse($body);
+        //$body = renderView("layout/game21.php", $data);
+        //sendResponse($body);
     }
 }

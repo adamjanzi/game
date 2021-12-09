@@ -1,0 +1,36 @@
+IF box is checked
+    SET value to 0
+ELSE
+    value is 1
+END IF
+
+FOR each arraydata in rollArray
+    SET current rollArray arraydata to 1 OR the value from the form POST
+END FOR
+
+IF current rollArray arraydata value is 0
+    Don't roll the selected dice
+ELSE IF current rollArray arraydata value is 1
+    Roll the selected dice
+END IF
+
+Initiate scoreIndex as 0
+IF scoreIndex is less than 6
+    Initiate rollQueue as 0 if it hasn't been done yet
+    IF rollQueue is less than 3
+        Show all dicerolls and allow the user to roll again
+        rollQueue++
+    END IF
+    FOR each dice value
+        IF the dice value is the same as scoreIndex + 1
+            Store the sum of the dice value as the current totalScore.
+        END IF
+    END FOR
+    scoreIndex++
+END IF
+Show totalScore + bonus and give the user the option to restart the game.
+
+Initiate bonus as 0
+IF totalScore is more than 63
+    bonus = 35
+END IF

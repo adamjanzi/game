@@ -23,13 +23,14 @@ class Game21computer
 
     public function playGame21(): void
     {
-        $data = [
-            "header" => "Game 21",
-            "action" => url("/game21computer/process"),
-            "computerTotalScore" => $_SESSION["computerTotalScore"] ?? 0
-        ];
+        //$data = [
+        //    "header" => "Game 21",
+        //    "action" => url("/game21computer/process"),
+        //    "computerTotalScore" => $_SESSION["computerTotalScore"] ?? 0
+        //];
 
         $scoreMessage = "";
+        $diceHand = "";
 
         if (!isset($_SESSION["computerTotalScore"])) {
             $_SESSION["computerTotalScore"] = 0;
@@ -69,11 +70,11 @@ class Game21computer
             $scoreMessage = "";
         }
 
-        $data["diceHandRollSum"] = $diceHand->getLastRollSum();
-        $data["scoreMessage"] = $scoreMessage;
+        $_SESSION["diceHandRollSum"] = $diceHand->getLastRollSum();
+        $_SESSION["scoreMessage"] = $scoreMessage;
 
 
-        $body = renderView("layout/game21computer.php", $data);
-        sendResponse($body);
+        //$body = renderView("layout/game21computer.php", $data);
+        //sendResponse($body);
     }
 }

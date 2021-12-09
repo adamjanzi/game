@@ -15,6 +15,10 @@ $numberOfDice = $numberOfDice ?? null;
 $totalScore = $totalScore ?? null;
 $computerTotalScore = $computerTotalScore ?? null;
 $url = url("/game21/destroy");
+$diceHandRoll = $diceHandRoll ?? null;
+$diceHandClass = $diceHandClass ?? null;
+$diceHandRollSum = $diceHandRollSum ?? 0;
+$scoreMessage = $scoreMessage ?? null;
 
 
 ?><h1><?= $header ?></h1>

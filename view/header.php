@@ -29,7 +29,8 @@ use function Adja20\Functions\url;
         <a href="<?= url("/no/such/path") ?>">Show 404 example</a> |
         <a href="<?= url("/form/view") ?>">Form view</a> |
         <a href="<?= url("/dice") ?>">Dice</a> |
-        <a href="<?= url("/game21") ?>">Game 21</a>
+        <a href="<?= url("/game21") ?>">Game 21</a> |
+        <a href="<?= url("/yatzy") ?>">Yatzy</a>
     </nav>
 </header>
 <main>

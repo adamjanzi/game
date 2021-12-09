@@ -7,6 +7,8 @@ $message = $message ?? null;
 $action = $action ?? null;
 $numberOfFaces = $numberOfFaces ?? null;
 $numberOfDice = $numberOfDice ?? null;
+$diceHandRoll = $diceHandRoll ?? null;
+$diceHandClass = $diceHandClass ?? null;
 
 ?><h1><?= $header ?></h1>
 

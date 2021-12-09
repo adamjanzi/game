@@ -23,15 +23,16 @@ class DiceDemonstration
 
     public function demonstrate(): void
     {
-        $data = [
-            "header" => "Dice",
-            "message" => "Here's a demonstration of my Dice-classes",
-            "action" => url("/dice/process"),
-            "numberOfFaces" => $_SESSION["numberOfFaces"] ?? null,
-            "numberOfDice" => $_SESSION["numberOfDice"] ?? null
-        ];
+        //$data = [
+        //    "header" => "Dice",
+        //    "message" => "Here's a demonstration of my Dice-classes",
+        //    "action" => url("/dice/process"),
+        //    "numberOfFaces" => $_SESSION["numberOfFaces"] ?? null,
+        //    "numberOfDice" => $_SESSION["numberOfDice"] ?? null
+        //];
 
         $graphicalDiceSides = 6;
+        $diceHand = "";
 
         $die = new Dice();
         $graphicalDie = new GraphicalDice();
@@ -62,13 +63,13 @@ class DiceDemonstration
             $diceHand->roll(6);
         }
 
-        $data["dieLastRoll"] = $die->getLastRoll();
-        $data["graphicalDieLastRoll"] = $graphicalDie->getLastRoll();
-        $data["class"] = $graphicalDie->graphic();
-        $data["diceHandRoll"] = $diceHand->getLastRoll();
-        $data["diceHandClass"] = $diceHand->getLastClass();
+        $_SESSION["dieLastRoll"] = $die->getLastRoll();
+        $_SESSION["graphicalDieLastRoll"] = $graphicalDie->getLastRoll();
+        $_SESSION["class"] = $graphicalDie->graphic();
+        $_SESSION["diceHandRoll"] = $diceHand->getLastRoll();
+        $_SESSION["diceHandClass"] = $diceHand->getLastClass();
 
-        $body = renderView("layout/dice.php", $data);
-        sendResponse($body);
+        //$body = renderView("layout/dice.php", $data);
+        //sendResponse($body);
     }
 }

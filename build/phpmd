@@ -1,9 +1,12 @@
 /Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21.php:24	The method playGame21() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
 /Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21.php:24	The method playGame21() has an NPath complexity of 2048. The configured NPath complexity threshold is 200.
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21computer.php:24	The method playGame21() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21computer.php:24	The method playGame21() has an NPath complexity of 240. The configured NPath complexity threshold is 200.
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21computer.php:68	The method playGame21 uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Router/Router.php:25	The method dispatch() has a Cyclomatic Complexity of 33. The configured cyclomatic complexity threshold is 10.
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Router/Router.php:78	Missing class import via use statement (line '78', column '29').
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Router/Router.php:87	Missing class import via use statement (line '87', column '29').
-/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Router/Router.php:91	Missing class import via use statement (line '91', column '29').
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21computer.php:24	The method playGame21() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21computer.php:24	The method playGame21() has an NPath complexity of 288. The configured NPath complexity threshold is 200.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Game21computer.php:69	The method playGame21 uses an else expression. Else clauses are basically not necessary and you can simplify the code by not using them.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Yatzy.php:24	The method playYatzy() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/Yatzy.php:24	The method playYatzy() has an NPath complexity of 448. The configured NPath complexity threshold is 200.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/YatzyDiceHand.php:29	Avoid using undefined variables such as '$rollArray' which will lead to PHP notices.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/YatzyDiceHand.php:30	Avoid using undefined variables such as '$rollArray' which will lead to PHP notices.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/YatzyDiceHand.php:31	Avoid using undefined variables such as '$rollArray' which will lead to PHP notices.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/YatzyDiceHand.php:32	Avoid using undefined variables such as '$rollArray' which will lead to PHP notices.
+/Users/adamskiboi/dbwebb-kurser/mvc/me/game/src/Dice/YatzyDiceHand.php:33	Avoid using undefined variables such as '$rollArray' which will lead to PHP notices.
