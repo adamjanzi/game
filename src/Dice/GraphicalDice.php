@@ -9,7 +9,6 @@ namespace Adja20\Dice;
  */
 class GraphicalDice extends Dice
 {
-
     /**
      * Get a graphic value of the last rolled dice.
      *

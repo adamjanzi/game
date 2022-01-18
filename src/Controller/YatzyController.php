@@ -11,8 +11,7 @@ use Adja20\Dice\Yatzy;
 use function Adja20\Functions\{
     destroySession,
     renderView,
-    url,
-    redirectTo
+    url
 };
 
 /**
@@ -52,7 +51,7 @@ class YatzyController
     {
         if ($_SESSION["scoreIndex"] == 6) {
             destroySession();
-        } else {
+        } else if ($_SESSION["scoreIndex"] != 6) {
             $_SESSION["rollArray"][0] = $_POST["roll1"] ?? 1;
             $_SESSION["rollArray"][1] = $_POST["roll2"] ?? 1;
             $_SESSION["rollArray"][2] = $_POST["roll3"] ?? 1;

@@ -9,9 +9,7 @@ use Adja20\Dice\GraphicalDice;
 use Adja20\Dice\YatzyDiceHand;
 
 use function Adja20\Functions\{
-    redirectTo,
     renderView,
-    sendResponse,
     url
 };
 
@@ -20,7 +18,6 @@ use function Adja20\Functions\{
  */
 class Yatzy
 {
-
     public function playYatzy(): void
     {
         //$data = [
@@ -100,11 +97,11 @@ class Yatzy
         $_SESSION["scoreMessage"] = $scoreMessage;
         $_SESSION["bonus"] = $diceHand->getBonus($_SESSION["diceHandRollSum"]);
         $_SESSION["yatzyTotalScore"] = $diceHand->getTotal(
-                                        $_SESSION["rollQueue"],
-                                        $_SESSION["scoreIndex"],
-                                        $_SESSION["diceHandRollSum"],
-                                        $_SESSION["bonus"]
-                                    );
+            $_SESSION["rollQueue"],
+            $_SESSION["scoreIndex"],
+            $_SESSION["diceHandRollSum"],
+            $_SESSION["bonus"]
+        );
         $_SESSION["buttonValue"] = $diceHand->getButtonValue($_SESSION["scoreIndex"]);
         $_SESSION["message"] = $diceHand->getMessage($_SESSION["scoreIndex"], $_SESSION["rollQueue"]);
         $_SESSION["checkboxStatus"] = $diceHand->changeCheckbox($_SESSION["scoreIndex"], $_SESSION["rollQueue"]);

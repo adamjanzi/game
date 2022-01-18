@@ -12,13 +12,10 @@ all:
 	@echo "Review the file 'Makefile' to see what targets are supported."
 
 clean:
-	@# Yet nothing to do in this target
+	rm -rf build .phpunit.result.cache
 
-clean-cache:
-	rm -rf cache/*/*
-
-clean-all:
-	rm -rf .bin build vendor
+clean-all: clean
+	rm -rf .bin vendor composer.lock
 
 install: install-php-tools
 	composer install
@@ -27,7 +24,7 @@ install-php-tools:
 	install -d .bin
 
 	# phploc
-	curl -Lso $(PHPLOC) https://phar.phpunit.de/phploc.phar && chmod 755 $(PHPLOC)
+	curl -k -Lso $(PHPLOC) https://phar.phpunit.de/phploc.phar && chmod 755 $(PHPLOC)
 
 	# phpcs
 	curl -Lso $(PHPCS) https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar && chmod 755 $(PHPCS)
@@ -36,7 +33,7 @@ install-php-tools:
 	curl -Lso $(PHPCBF) https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar && chmod 755 $(PHPCBF)
 
 	# phpcpd
-	curl -Lso $(PHPCPD) https://phar.phpunit.de/phpcpd.phar && chmod 755 $(PHPCPD)
+	curl -k -Lso $(PHPCPD) https://phar.phpunit.de/phpcpd.phar && chmod 755 $(PHPCPD)
 
 	# phpmd
 	curl -Lso $(PHPMD) https://github.com/phpmd/phpmd/releases/download/2.9.1/phpmd.phar && chmod 755 $(PHPMD)

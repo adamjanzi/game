@@ -25,6 +25,18 @@ class YatzyDiceHand
 
     public function roll($numberOfSides): void
     {
+        if (!isset($_SESSION["rollArray"])) {
+            $_SESSION["rollArray"][0] = 1;
+            $_SESSION["rollArray"][1] = 1;
+            $_SESSION["rollArray"][2] = 1;
+            $_SESSION["rollArray"][3] = 1;
+            $_SESSION["rollArray"][4] = 1;
+        }
+
+        if (!isset($_SESSION["rollQueue"])) {
+            $_SESSION["rollQueue"] = 0;
+        }
+
         $len = 5;
         $rollArray[0] = $_SESSION["rollArray"][0];
         $rollArray[1] = $_SESSION["rollArray"][1];
@@ -116,12 +128,12 @@ class YatzyDiceHand
 
     public function getMessage($index, $queue): string
     {
+        $message = "Select which dice to hold:";
+
         if ($index == 6) {
             $message = "Round finished! Wanna play again? Press the button to play more!";
         } else if ($queue == 3) {
             $message = "";
-        } else {
-            $message = "Select which dice to hold:";
         }
 
         return $message;
@@ -132,7 +144,7 @@ class YatzyDiceHand
         $checkboxStatus = "enabled";
         if ($index == 6 || $queue == 3) {
             $checkboxStatus = "disabled";
-        } else {
+        } else if ($index != 6 && $queue != 3){
             $checkboxStatus = "enabled";
         }
 

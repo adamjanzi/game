@@ -36,8 +36,9 @@ class Session
     {
         destroySession();
 
-        return (new Response())
-            ->withStatus(301)
-            ->withHeader("Location", url("/session"));
+        $psr17Factory = new Psr17Factory();
+        return $psr17Factory
+            ->createResponse(301)
+            ->withHeader("Location", url("/destroy"));
     }
 }

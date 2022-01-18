@@ -9,9 +9,7 @@ use Adja20\Dice\GraphicalDice;
 use Adja20\Dice\DiceHand;
 
 use function Adja20\Functions\{
-    redirectTo,
     renderView,
-    sendResponse,
     url
 };
 
@@ -20,7 +18,6 @@ use function Adja20\Functions\{
  */
 class Game21computer
 {
-
     public function playGame21(): void
     {
         //$data = [
@@ -32,20 +29,42 @@ class Game21computer
         $scoreMessage = "";
         $diceHand = "";
 
+        if (!isset($_SESSION["scoreTest"])) {
+            $_SESSION["scoreTest"] = 0;
+        }
+
+        $scoreTest = $_SESSION["scoreTest"];
+
         if (!isset($_SESSION["computerTotalScore"])) {
             $_SESSION["computerTotalScore"] = 0;
         }
 
-        if (isset($_SESSION["numberOfDice"])) {
-            $diceHand = new DiceHand(1);
+        if (!isset($_SESSION["totalScore"])) {
+            $_SESSION["totalScore"] = 0;
         }
 
-        if (!isset($_SESSION["numberOfDice"])) {
+        if (!isset($_SESSION["computerRoundScore"])) {
+            $_SESSION["computerRoundScore"] = 0;
+        }
+
+        if (!isset($_SESSION["roundScore"])) {
+            $_SESSION["roundScore"] = 0;
+        }
+
+        if (isset($_SESSION["numberOfComputerDice"])) {
+            $diceHand = new DiceHand($_SESSION["numberOfComputerDice"]);
+        }
+
+        if (!isset($_SESSION["numberOfComputerDice"])) {
             $diceHand = new DiceHand(1);
         }
 
         for ($_SESSION["computerTotalScore"] = 0; $_SESSION["computerTotalScore"] < 21; $_SESSION["computerTotalScore"] += $diceHand->getLastRollSum()) {
-            $diceHand->roll(6);
+            if (isset($_SESSION["numberOfComputerDiceFaces"])) {
+                $diceHand->roll($_SESSION["numberOfComputerDiceFaces"]);
+            } else if (!isset($_SESSION["numberOfComputerDiceFaces"])) {
+                $diceHand->roll(6);
+            }
             $_SESSION["computerTotalScore"] += $diceHand->getLastRollSum();
 
             if ($_SESSION["computerTotalScore"] == $_SESSION["totalScore"]) {
@@ -54,8 +73,12 @@ class Game21computer
                 break;
             } else if ($_SESSION["computerTotalScore"] > 21) {
                 break;
+            } else if ($scoreTest == 1) {
+                break;
             }
         }
+
+        $scoreMessage = "";
 
         if ($_SESSION["computerTotalScore"] > 21) {
             $scoreMessage = "YOU WON!";
@@ -66,8 +89,6 @@ class Game21computer
         } else if ($_SESSION["computerTotalScore"] > $_SESSION["totalScore"] && $_SESSION["computerTotalScore"] < 21) {
             $scoreMessage = "YOU LOSE!";
             $_SESSION["computerRoundScore"] += 1;
-        } else {
-            $scoreMessage = "";
         }
 
         $_SESSION["diceHandRollSum"] = $diceHand->getLastRollSum();

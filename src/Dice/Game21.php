@@ -9,9 +9,7 @@ use Adja20\Dice\GraphicalDice;
 use Adja20\Dice\DiceHand;
 
 use function Adja20\Functions\{
-    redirectTo,
     renderView,
-    sendResponse,
     url
 };
 
@@ -20,7 +18,6 @@ use function Adja20\Functions\{
  */
 class Game21
 {
-
     public function playGame21(): void
     {
         //$data = [
